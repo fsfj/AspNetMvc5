@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AspNetMvc5.Models;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace AspNetMvc5.Controllers
 {
@@ -121,6 +123,27 @@ namespace AspNetMvc5.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<ActionResult> Print()
+        {
+            ReportDocument rd = new ReportDocument();
+
+            rd.Load(Path.Combine(Server.MapPath("~/Views/Products/PrintProduct.rpt")));
+
+            rd.SetDataSource(await db.Products.ToListAsync());
+
+            //var emp = await _empRepo.GetEmployeeDetails(empNo);
+            //var jobtitle = await _empRepo.GetJobTitle(emp.JobID);
+            //var department = await _empRepo.GetDepartment(jobtitle.DepID);
+            ////var department = db.
+            //rd.SetParameterValue("ID", empNo.ToString("D6"));
+            //rd.SetParameterValue("Name", emp.FullName);
+            //rd.SetParameterValue("Dept", department != null ? department.DepName : "");
+            //rd.Refresh();
+            Stream stream = rd.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+            stream.Seek(0, SeekOrigin.Begin);
+
+            return new FileStreamResult(stream, "application/pdf");
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

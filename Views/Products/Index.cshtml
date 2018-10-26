@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AspNetMvc5.Models.Product>
+﻿@model System.Collections.Generic.IEnumerable<AspNetMvc5.Models.Product>
 
 @{
     ViewBag.Title = "Index";
@@ -8,6 +8,7 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Print", "Print")
 </p>
 <table class="table">
     <tr>

@@ -10,7 +10,6 @@ namespace AspNetMvc5.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "AspNetMvc5.Models.AspNetMvc5Context";
         }
 
         protected override void Seed(AspNetMvc5.Models.AspNetMvc5Context context)
