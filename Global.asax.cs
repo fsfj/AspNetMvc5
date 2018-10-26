@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AspNetMvc5.Helpers;
 using AspNetMvc5.Repositories;
 using Autofac;
 
@@ -19,7 +20,7 @@ namespace AspNetMvc5
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            
+            AutoMapperProfile.Run();
             //builder.Register(typeof(MvcApplication).Assembly)
             //builder.RegisterControllers(typeof(MvcApplication).Assembly);
 

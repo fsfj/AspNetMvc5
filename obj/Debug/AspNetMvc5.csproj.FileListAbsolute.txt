@@ -118,3 +118,8 @@ D:\JR\AspNetMvc5\AspNetMvc5\bin\Microsoft.AI.Web.xml
 D:\JR\AspNetMvc5\AspNetMvc5\bin\Microsoft.Owin.dll
 D:\JR\AspNetMvc5\AspNetMvc5\bin\Owin.dll
 D:\JR\AspNetMvc5\AspNetMvc5\bin\Microsoft.Owin.xml
+D:\JR\AspNetMvc5\AspNetMvc5\bin\AutoMapper.dll
+D:\JR\AspNetMvc5\AspNetMvc5\bin\System.ValueTuple.dll
+D:\JR\AspNetMvc5\AspNetMvc5\bin\AutoMapper.pdb
+D:\JR\AspNetMvc5\AspNetMvc5\bin\AutoMapper.xml
+D:\JR\AspNetMvc5\AspNetMvc5\bin\System.ValueTuple.xml
